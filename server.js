@@ -13,7 +13,7 @@ class Server {
 
     let app = express();
 
-    app.set('port', 4200);
+    app.set('port', 80);
 
     app.use(express.static(path.join(__dirname, './dist')));
 
