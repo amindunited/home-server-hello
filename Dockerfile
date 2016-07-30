@@ -1,9 +1,10 @@
 # use our prepared Raspberry Pi compatible Docker base image with Node.js
-FROM hypriot/rpi-node:0.12.0
+FROM hypriot/rpi-node
 
 # make the src folder available in the docker image
-ADD . /site
-WORKDIR /site
+RUN mkdir /opt/site
+ADD . /opt/site
+WORKDIR /opt/site
 
 # install the dependencies from the package.json file
 RUN npm install
